@@ -1,6 +1,12 @@
 assert = require("assert")
 
-describe "Test", ->
+createPlanet = (x,y) ->
+  x: x
+  y: y
 
-  it "should return hello", ->
-    assert.ok
+describe "App", ->
+
+  it "should create a planet of 5 by 3", ->
+    mars = createPlanet(5, 3)
+    assert.equal(5, mars.x)
+    assert.equal(3, mars.y)
