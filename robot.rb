@@ -11,27 +11,28 @@ class Robot
 
   def drive(instructions)
     instructions.each_char do |instruction|
-      rotate_left if instruction == 'L'
-      rotate_right if instruction == 'R'
+      rotate(instruction) if instruction == 'L' || instruction == 'R'
     end
   end
 
   private
 
-  def rotate_right
+  def rotate(instruction)
     while @compass.first != @orientation do
-      @compass.unshift(@compass.pop)
+      rotate_compass_right if instruction == 'R'
+      rotate_compass_left if instruction == 'L'
     end
-    @orientation = @compass[1]
+    @orientation = @compass[1] if instruction == 'R'
+    @orientation = @compass.last if instruction == 'L'
     reset_compass
   end
 
-  def rotate_left
-    while @compass.first != @orientation do
-      @compass.push(@compass.shift)
-    end
-    @orientation = @compass.last
-    reset_compass
+  def rotate_compass_right
+    @compass.unshift(@compass.pop)
+  end
+
+  def rotate_compass_left
+    @compass.push(@compass.shift)
   end
 
   def reset_compass
