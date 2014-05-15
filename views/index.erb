@@ -2,9 +2,46 @@
 <html>
 <head>
     <title>Martian Robots</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="//web-toolkit.global.sky.com/2.2.1/stylesheets/toolkit.css"/>
+    <link rel="stylesheet" href="//web-toolkit.global.sky.com/2.2.1/fonts/skycons.css"/>
+    <link rel="stylesheet" href="overrides.css"/>
+    <script src="http://web-toolkit.global.sky.com/static/lib/jquery-2.0.3.js"></script>
+    <script src='//web-toolkit.global.sky.com/2.2.1/scripts/toolkit.min.js'></script>
 </head>
-<body>
-    <h2>Martian Robots</h2>
-    Create a planet
-</body>
+  <body class="skycom-container">
+    <h1>Martian Robots</h1>
+    <form class="sky-form" action="/" method=post>
+      <span class="row skycom-12">
+        <h3 class="alpha skycom-6 pod-title smaller">Planet to roam</h3>
+        <div class="select skycom-5">
+          <select id="planet-size" name="planet-size" required>
+            <option value="">Select a planet</option>
+            <option value="Mars">Mars (5 by 3)</option>
+          </select>
+        </div>
+      </span>
+      <span class="row skycom-12">
+        <h3 class="alpha skycom-6 pod-title smaller">Robot's starting location</h3>
+        <div class="select skycom-5">
+          <select id="robot-location" name="robot-location" required>
+            <option value="">Select a starting point</option>
+            <option value="1, 1">(1, 1)</option>
+            <option value="3, 2">(3, 2)</option>
+          </select>
+        </div>
+      </span>
+      <span class="row skycom-12">
+        <h3 class="alpha skycom-6 pod-title smaller">Robot's orientation</h3>
+        <div class="select skycom-5">
+          <select id="robot-orientation" name="robot-orientation" required>
+            <option value="">Face in direction</option>
+            <option value="East">East</option>
+            <option value="North">North</option>
+          </select>
+        </div>
+      </span>
+      <button type=submit class="btn btn-primary">Begin!</button>
+    </form>
+  </body>
 </html>
