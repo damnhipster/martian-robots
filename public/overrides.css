@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+}
+
+h3.pod-title {
+  margin: 0 0 20px 0;
+}
+
+span select {
+  margin-bottom: 20px;
+  width: 100% !important;
+}
+
+.destinations {
+  margin-top: 20px;
+}
+
