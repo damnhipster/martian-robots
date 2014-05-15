@@ -18,6 +18,7 @@ feature 'As a user, I want to' do
   end
 
   scenario 'direct a robot to fall off the edge' do
+    pending 'Let\'s get the guts of this working'
     visit '/'
     select('Mars (5 by 3)', from: 'planet-size')
     select('(3, 2)', from: 'robot-location')
