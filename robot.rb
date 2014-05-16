@@ -11,6 +11,7 @@ class Robot
 
   def drive(instructions)
     instructions.each_char do |instruction|
+      move_forward if instruction == 'F'
       rotate(instruction) if instruction == 'L' || instruction == 'R'
     end
   end
@@ -33,6 +34,13 @@ class Robot
 
   def rotate_compass_left
     @compass.push(@compass.shift)
+  end
+
+  def move_forward
+    @column = (@column - 1) if @orientation == 'South'
+    @column = (@column + 1) if @orientation == 'North'
+    @row = (@row - 1) if @orientation == 'West'
+    @row = (@row + 1) if @orientation == 'East'
   end
 
   def reset_compass
