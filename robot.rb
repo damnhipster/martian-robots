@@ -9,11 +9,9 @@ class Robot
     @compass = ['North', 'East', 'South', 'West']
   end
 
-  def drive(instructions)
-    instructions.each_char do |instruction|
-      move_forward if instruction == 'F'
-      rotate(instruction) if instruction == 'L' || instruction == 'R'
-    end
+  def drive(instruction)
+    move_forward if instruction == 'F'
+    rotate(instruction) if instruction == 'L' || instruction == 'R'
   end
 
   private

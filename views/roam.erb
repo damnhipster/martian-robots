@@ -13,5 +13,8 @@
     <h1>Martian Robots</h1>
     <h3>Roaming <%= planet %> from (<%= initial_location %>) facing <%= initial_orientation %></h3>
     <h3>Ended up at (<%= location %>) facing <%= orientation %></h3>
+    <% if lost %>
+      <h3>Ended up lost!</h3>
+    <% end %>
   </body>
 </html>

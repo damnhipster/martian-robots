@@ -18,7 +18,7 @@ feature 'As a user, I want to' do
     expect(page).to have_content 'Ended up at (1, 1) facing East'
   end
 
-  scenario 'direct a robot to traverse the planet' do
+  scenario 'direct a robot to fall off the edge' do
     visit '/'
     select('Mars (5 by 3)', from: 'planet-size')
     select('(3, 2)', from: 'robot-location')
@@ -27,6 +27,7 @@ feature 'As a user, I want to' do
     click_button("Begin!")
     expect(page).to have_content 'Roaming Mars from (3, 2) facing North'
     expect(page).to have_content 'Ended up at (3, 3) facing North'
+    expect(page).to have_content 'Ended up lost!'
   end
 
 end

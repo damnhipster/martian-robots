@@ -39,12 +39,4 @@ describe Robot, "#drive" do
     expect(robot.column).to eq(1)
   end
 
-  it "should be able to move sequentially" do
-    robot = Robot.new(1,1,'North')
-    robot.drive('FRFLF')
-    expect(robot.column).to eq(3)
-    expect(robot.row).to eq(2)
-    expect(robot.orientation).to eq('North')
-  end
-
 end

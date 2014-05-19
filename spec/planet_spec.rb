@@ -9,4 +9,14 @@ describe Planet, "#robot_fell_off?" do
     expect(Planet.new(5,3).robot_fell_off?(robot)).to be_false
   end
 
+  it "should return true if robot has gone too far east" do
+    robot = Robot.new(6,2,'East')
+    expect(Planet.new(5,3).robot_fell_off?(robot)).to be_true
+  end
+
+  it "should return true if robot has gone too far north" do
+    robot = Robot.new(4,7,'North')
+    expect(Planet.new(5,3).robot_fell_off?(robot)).to be_true
+  end
+
 end
