@@ -12,21 +12,21 @@ feature 'As a user, I want to' do
     select('Mars (5 by 3)', from: 'planet-size')
     select('(1, 1)', from: 'robot-location')
     select('East', from: 'robot-orientation')
-    select('RFRFRFRF', from: 'drive-robot')
+    select('RFRFRFRF', from: 'instruction')
     click_button("Begin!")
     expect(page).to have_content 'Roaming Mars from (1, 1) facing East'
+    expect(page).to have_content 'Ended up at (1, 1) facing East'
   end
 
-  scenario 'direct a robot to fall off the edge' do
-    pending 'Let\'s get the guts of this working'
+  scenario 'direct a robot to traverse the planet' do
     visit '/'
     select('Mars (5 by 3)', from: 'planet-size')
     select('(3, 2)', from: 'robot-location')
     select('North', from: 'robot-orientation')
-    select('FRRFLLFFRRFLL', from: 'drive-robot')
+    select('FRRFLLFFRRFLL', from: 'instruction')
     click_button("Begin!")
     expect(page).to have_content 'Roaming Mars from (3, 2) facing North'
-    expect(page).to have_content 'Lost!'
+    expect(page).to have_content 'Ended up at (3, 3) facing North'
   end
 
 end

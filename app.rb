@@ -9,10 +9,13 @@ end
 post '/' do
   @robot = Robot.new(initial_row, initial_column, initial_orientation)
   @planet = Planet.new(3,5)
+  @robot.drive(params['instruction'])
   erb :roam, locals: {
     planet: params['planet-size'],
-    location: params['robot-location'],
-    orientation: params['robot-orientation'],
+    initial_location: params['robot-location'],
+    initial_orientation: initial_orientation,
+    location: "#{ @robot.row }, #{ @robot.column }",
+    orientation: @robot.orientation,
     lost: robot_lost?
   }
 end
