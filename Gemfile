@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'capybara'
-gem 'rspec'
+
+group :development, :test do
+  gem 'capybara'
+  gem 'rspec'
+  gem 'guard-rspec', require: false
+end
